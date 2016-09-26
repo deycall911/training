@@ -57,6 +57,7 @@ public class ImageUploader {
             scanner.close();
         } catch (IOException e) {
             e.printStackTrace();
+            e.printStackTrace();
         }
 
         StringBuilder imageData = new StringBuilder("");
