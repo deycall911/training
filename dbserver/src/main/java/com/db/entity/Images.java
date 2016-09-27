@@ -19,8 +19,7 @@ public class Images {
 
     }
 
-    public Images(Integer id, String name, File image) {
-        this.id = id;
+    public Images(String name, File image) {
         this.image = image;
         this.name = name;
     }

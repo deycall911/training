@@ -16,4 +16,6 @@ public interface TagImageConnectionRepository extends CrudRepository<TagImageCon
 //
 //    @Query("SELECT max(id) FROM TagImageConnection")
 //    Integer getHighestIdValue();
+
+    List<TagImageConnection> findByImageId(Integer imageId);
 }

@@ -15,8 +15,7 @@ public class Tags {
 
     }
 
-    public Tags(Integer id, String name) {
-        this.id = id;
+    public Tags(String name) {
         this.name = name;
     }
 

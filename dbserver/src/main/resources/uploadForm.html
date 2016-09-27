@@ -11,7 +11,6 @@
 <body ng-app="filterSpecial" ng-controller="filterCtrl">
 <div ng-init="getAllImages();"></div>
 
-
 <div style="background-color:#DDDDDD; padding: 10px; ">
     <table>
         <tr>
@@ -50,7 +49,7 @@
 
     <div ng-repeat="image in images | filter:search:startsWith" style="display: inline-block; padding:7px;"
          tag="{{image.tags}}">
-        <img src="/images/{{image.id}}" title="{{image.name}}" height="200px"
+        <img src="/image/{{image.id}}/png" title="{{image.name}}" height="200px"
              ng-click="showAdvanced($event,image.id,image.name,image.tags)">
     </div>
 </div>

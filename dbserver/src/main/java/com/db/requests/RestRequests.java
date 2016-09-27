@@ -12,8 +12,10 @@ import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -25,7 +27,10 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
@@ -35,14 +40,14 @@ import org.h2.util.IOUtils;
 GET /images/ (all image metedata)
 GET /image/$id/ (returns image metadata)
 GET /image/$id/png (returns actual image)
-PUT /image/$id/  returns image metadata)
-POST /image returns image metadata)
+PUT /image/$id/  (returns image metadata)
+POST /image (returns image metadata)
 
  */
 
 
 @Component
-@Path("/images/")
+@Path("/")
 public class RestRequests {
     @Autowired
     private ImagesRepository imagesRepository;
@@ -54,7 +59,7 @@ public class RestRequests {
     private TagImageConnectionRepository tagImageConnectionRepository;
 
     @GET
-    @Path("/")
+    @Path("/images")
     @Produces(MediaType.APPLICATION_JSON)
 //    public Map<String,Iterable<Images>> returnSomething() {
     public Iterable<Images> returnSomething() {
@@ -67,8 +72,15 @@ public class RestRequests {
     }
 
     @GET
+    @Path("/image/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Images getImageMetaData(@PathParam("id") Integer id) {
+        return imagesRepository.findOne(id);
+    }
+
+    @GET
     @Produces("front/png")
-    @Path("/{imageId}/png")
+    @Path("image/{imageId}/png")
     public byte[] getImageById(@PathParam("imageId") int imageId) {
         BufferedImage img;
         File imageFromDb = imagesRepository.findOne(imageId).getImage();
@@ -89,10 +101,11 @@ public class RestRequests {
         return bao.toByteArray();
     }
 
-    @POST
-    @Path("/upload/{name}/{tag}")
+    @PUT
+    @Path("/image")
     @Consumes({MediaType.MULTIPART_FORM_DATA, MediaType.APPLICATION_FORM_URLENCODED})
-    public boolean uploadImage(@FormDataParam("file") InputStream imageInputStream, @PathParam("name") String name, @PathParam("tag") String tag) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Images uploadImage(@FormDataParam("file") InputStream imageInputStream, @FormDataParam("name") String name, @FormDataParam("tag") String tag) {
 
         File file;
         try {
@@ -102,34 +115,43 @@ public class RestRequests {
             outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
+            return null;
         }
 
-        int currentImageId = (new Long(imagesRepository.count())).intValue();
 
-        imagesRepository.save(new Images(currentImageId, name, file));
+
+        Images image = imagesRepository.save(new Images(name, file));
+        int currentImageId = image.getId();
 
         StringTokenizer allTags = new StringTokenizer(tag);
         while (allTags.hasMoreTokens()) {
-            String currentTag = allTags.nextToken();
-            Integer currentTagId = tagsRepository.findByName(currentTag).getId();
-            if (currentTagId == null) {
-                currentTagId = createNewTag(currentTag);
+            String currentTagText = allTags.nextToken();
+            Tags currentTag = tagsRepository.findByName(currentTagText);
+            if (currentTag == null) {
+                currentTag = createNewTag(currentTagText);
             }
 
-            addNewTagImageConnection(currentImageId, currentTagId);
+            addNewTagImageConnection(currentImageId, currentTag.getId());
         }
-        return true;
+        return image;
     }
 
-    private int createNewTag(String name) {
-        int currentTagId = (int) tagsRepository.count();
-
-        tagsRepository.save(new Tags(currentTagId, name));
-        return currentTagId;
+    @GET
+    @Path("/tags/image/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<String> returtTagsWhereImageId(@PathParam("id") Integer id) {
+        List<String> tagsForCurrentImageId = new ArrayList<>();
+        tagImageConnectionRepository.findByImageId(id).stream().forEach(tagConnection -> {
+            tagsForCurrentImageId.add(tagsRepository.findOne(tagConnection.getTagId()).getName());
+        });
+        return tagsForCurrentImageId;
     }
 
-    private void addNewTagImageConnection(Integer imageId, Integer tagId) {
-        tagImageConnectionRepository.save(new TagImageConnection(imageId, tagId));
+    private Tags createNewTag(String name) {
+        return tagsRepository.save(new Tags(name));
+    }
+
+    private int addNewTagImageConnection(Integer imageId, Integer tagId) {
+        return tagImageConnectionRepository.save(new TagImageConnection(imageId, tagId)).getId();
     }
 }

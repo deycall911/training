@@ -17,16 +17,19 @@ app.directive('fileModel', ['$parse', function ($parse) {
 }]);
 
 app.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+    this.uploadFileToUrl = function(file,name,tag, uploadUrl){
         var fd = new FormData();
         fd.append('file', file);
-        $http.post(uploadUrl, fd, {
+        fd.append('name',name);
+        fd.append('tag',tag);
+
+        $http.put(uploadUrl, fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
         }).success(function(){
-            $route.reload();
-        }).error(function(){
 
+        }).error(function(e){
+            console.log(e);
         });
     }
 }]);
@@ -37,26 +40,41 @@ app.controller('filterCtrl', ['$scope','fileUpload','$mdDialog','$http', functio
         return lowerStr.indexOf(expected.toLowerCase()) === 0;
     }
 
+    $scope.getTagsForImageWithId = function() {
+        for (i = 0; i < $scope.images.length; i++) {
+            $scope.getTags(i);
+        }
+    }
+
+    $scope.getTags = function(i) {
+        $http.get('/tags/image/' + $scope.images[i].id).success(function(data) {
+            $scope.images[i].tags = data;
+        }).error(function(e) {
+            console.log(e);
+        });
+    }
+
     $scope.getAllImages = function() {
-        $http.get('/images/getAll').success(function(data) {
+        $http.get('/images/').success(function(data) {
             $scope.images = data;
+            $scope.getTagsForImageWithId();
         });
     }
 
     $scope.uploadFile = function(){
-        var uploadUrl = "/upload/" + $scope.name + "/" + $scope.tag;
+        var uploadUrl = "/image";
 
         console.log(uploadUrl);
         var file = $scope.myFile;
         console.log('file is ' );
         console.dir(file);
-        fileUpload.uploadFileToUrl(file, uploadUrl);
+        fileUpload.uploadFileToUrl(file,$scope.name,$scope.tag, uploadUrl);
     };
 
     $scope.showAdvanced = function(ev,id,name,tags) {
         $mdDialog.show({
             controller: DialogController,
-            template: '<img src="/images/' + id + '" ></img> <p style="margin:3px">Name: ' + name + '</p><p style="margin:5px">Tags: ' + tags.toString() + '</p>',
+            template: '<img src="/image/' + id + '/png" ></img> <p style="margin:3px">Name: ' + name + '</p><p style="margin:5px">Tags: ' + tags.toString() + '</p>',
             parent: angular.element(document.body),
             targetEvent: ev,
             clickOutsideToClose:true,

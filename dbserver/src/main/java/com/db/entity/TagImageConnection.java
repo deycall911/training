@@ -14,7 +14,7 @@ public class TagImageConnection {
 
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     public TagImageConnection() {
 
@@ -33,7 +33,7 @@ public class TagImageConnection {
         return tagId;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 }
