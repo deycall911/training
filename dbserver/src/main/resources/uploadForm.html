@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="https://material.angularjs.org/1.1.1/docs.css">
+</head>
+<body ng-app="filterSpecial" ng-controller="filterCtrl">
+<div ng-init="getAllImages();"></div>
+
+
+<div style="background-color:#DDDDDD; padding: 10px; ">
+    <table>
+        <tr>
+            <td class="col-md-1 text-right">Name:</td>
+            <td class="col-md-5"><input type="text" name="name" class="form-control" placeholder="Name"
+                                        ng-model="name"/></td>
+
+            <td class="col-md-1 text-right">Tag:</td>
+            <td class="col-md-5"><input type="text" name="tag" class="form-control" placeholder="Tags" ng-model="tag"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1 text-right" style="padding:10px;">File to upload:</td>
+            <td class="col-md-5">
+                <label class="btn btn-primary" style="border-bottom-right-radius: 0px;border-top-right-radius: 0;width: 20%;">
+                    <input type="file" name="file" class="form-control" ng-model="file" file-model="myFile"
+                           style="display: none;"/>
+                    Browse...
+                </label>
+                <span class="form-control" style="border-bottom-left-radius: 0;border-top-left-radius: 0;width: 80%;float: right;">{{myFile.name}}</span>
+            </td>
+            <td class="col-md-1"/>
+            <td class="col-md-5">
+                <button class="col-md-12 btn btn-primary" ng-click="uploadFile()">Submit</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <input type="text" ng-model="search" class="col-md-12 form-control" placeholder="Search name/tag">
+</div>
+
+
+<div class="form-group">
+
+    <div ng-repeat="image in images | filter:search:startsWith" style="display: inline-block; padding:7px;"
+         tag="{{image.tags}}">
+        <img src="/images/{{image.id}}" title="{{image.name}}" height="200px"
+             ng-click="showAdvanced($event,image.id,image.name,image.tags)">
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+<script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.1/angular-material.js"></script>
+
+<script src="/script"></script>
+</body>
+</html>
