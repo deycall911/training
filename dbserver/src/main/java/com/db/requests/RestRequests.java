@@ -25,12 +25,24 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 import org.h2.util.IOUtils;
 
+/*
+GET /images/ (all image metedata)
+GET /image/$id/ (returns image metadata)
+GET /image/$id/png (returns actual image)
+PUT /image/$id/  returns image metadata)
+POST /image returns image metadata)
+
+ */
+
+
 @Component
-@Path("/")
+@Path("/images/")
 public class RestRequests {
     @Autowired
     private ImagesRepository imagesRepository;
@@ -41,21 +53,22 @@ public class RestRequests {
     @Autowired
     private TagImageConnectionRepository tagImageConnectionRepository;
 
-
     @GET
-    @Path("/images/getAll")
+    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
+//    public Map<String,Iterable<Images>> returnSomething() {
     public Iterable<Images> returnSomething() {
 
+
         Iterable<Images> customImages = imagesRepository.findAll();
-
-
+//        HashMap<String,Iterable<Images>> result= new HashMap<String,Iterable<Images>> ();
+//        result.put("result", customImages);
         return customImages;
     }
 
     @GET
-    @Produces("image/png")
-    @Path("/images/{imageId}")
+    @Produces("front/png")
+    @Path("/{imageId}/png")
     public byte[] getImageById(@PathParam("imageId") int imageId) {
         BufferedImage img;
         File imageFromDb = imagesRepository.findOne(imageId).getImage();
@@ -77,26 +90,9 @@ public class RestRequests {
     }
 
     @POST
-    @Path("/upload/image/{name}")
-    public void uploadImage(@FormDataParam("file") InputStream imageInputStream, @PathParam("name") String name) {
-        File file;
-        try {
-            file = new File(name);
-            OutputStream outputStream = new FileOutputStream(file);
-            IOUtils.copy(imageInputStream, outputStream);
-            outputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
-
-
-    }
-
-    @POST
     @Path("/upload/{name}/{tag}")
-    @Consumes({MediaType.MULTIPART_FORM_DATA,MediaType.APPLICATION_FORM_URLENCODED})
-    public String uploadImage(@FormDataParam("file") InputStream imageInputStream, @PathParam("name") String name, @PathParam("tag") String tag) {
+    @Consumes({MediaType.MULTIPART_FORM_DATA, MediaType.APPLICATION_FORM_URLENCODED})
+    public boolean uploadImage(@FormDataParam("file") InputStream imageInputStream, @PathParam("name") String name, @PathParam("tag") String tag) {
 
         File file;
         try {
@@ -106,7 +102,7 @@ public class RestRequests {
             outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return "redirect:/upload_fail";
+            return false;
         }
 
         int currentImageId = (new Long(imagesRepository.count())).intValue();
@@ -116,19 +112,18 @@ public class RestRequests {
         StringTokenizer allTags = new StringTokenizer(tag);
         while (allTags.hasMoreTokens()) {
             String currentTag = allTags.nextToken();
-            Integer currentTagId = tagsRepository.getIdByName(currentTag);
+            Integer currentTagId = tagsRepository.findByName(currentTag).getId();
             if (currentTagId == null) {
                 currentTagId = createNewTag(currentTag);
             }
 
             addNewTagImageConnection(currentImageId, currentTagId);
         }
-        return "redirect:/";
+        return true;
     }
 
     private int createNewTag(String name) {
-        Integer highestTagIdValue = tagsRepository.getHighestIdValue();
-        int currentTagId = (highestTagIdValue == null ? 0 : highestTagIdValue) + 1;
+        int currentTagId = (int) tagsRepository.count();
 
         tagsRepository.save(new Tags(currentTagId, name));
         return currentTagId;
