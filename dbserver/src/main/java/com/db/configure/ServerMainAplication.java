@@ -1,20 +1,23 @@
-package com.image.galery;
-
+package com.db.configure;
 
 import org.glassfish.jersey.servlet.ServletContainer;
 import org.glassfish.jersey.servlet.ServletProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+@EnableJpaRepositories("com.db.repository")
+@EntityScan("com.db.entity")
 @SpringBootApplication
-public class ProjectApplication {
+public class ServerMainAplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjectApplication.class, args);
+        SpringApplication.run(ServerMainAplication.class, args);
     }
-
 
 
     @Bean

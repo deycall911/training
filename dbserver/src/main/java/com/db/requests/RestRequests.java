@@ -1,20 +1,22 @@
-package com.image.galery;
+package com.db.requests;
 
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import com.db.entity.Images;
+import com.db.entity.TagImageConnection;
+import com.db.entity.Tags;
+import com.db.repository.ImagesRepository;
+import com.db.repository.TagImageConnectionRepository;
+import com.db.repository.TagsRepository;
 import org.glassfish.jersey.media.multipart.FormDataParam;
-import org.h2.util.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
@@ -23,13 +25,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.Scanner;
 import java.util.StringTokenizer;
+
+import org.h2.util.IOUtils;
 
 @Component
 @Path("/")
-public class ImageUploader {
-
+public class RestRequests {
     @Autowired
     private ImagesRepository imagesRepository;
 
@@ -41,47 +43,14 @@ public class ImageUploader {
 
 
     @GET
-    @Path("/")
-    @Produces(MediaType.TEXT_HTML)
-    public String home() {
+    @Path("/images/getAll")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Iterable<Images> returnSomething() {
 
-        StringBuilder result = new StringBuilder("");
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("uploadForm.html").getFile());
+        Iterable<Images> customImages = imagesRepository.findAll();
 
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                result.append(line).append("\n");
-            }
-            scanner.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-            e.printStackTrace();
-        }
 
-        StringBuilder imageData = new StringBuilder("");
-        for (Integer ImageId : imagesRepository.getAllIds()) {
-            imageData.append("{name: '" + imagesRepository.getNameForId(ImageId) + "' , ");
-            imageData.append("id: '" + String.valueOf(ImageId) + "' , ");
-
-            imageData.append("tags: [");
-            for (Integer tagId : tagImageConnectionRepository.getTagIdsFromImageId(ImageId)) {
-                imageData.append("'" + tagsRepository.getNameById(tagId) + "',");
-            }
-            if (imageData.substring(imageData.length() - 1).equals(",")) {
-                imageData.deleteCharAt(imageData.length() - 1);
-            }
-            imageData.append("]},");
-        }
-
-        if (imageData.length() > 0) {
-            if (imageData.substring(imageData.length() - 1).equals(",")) {
-                imageData.deleteCharAt(imageData.length() - 1);
-            }
-        }
-
-        return result.toString().replace("{imagesArrayDataToRecive}", imageData.toString());
+        return customImages;
     }
 
     @GET
@@ -89,7 +58,7 @@ public class ImageUploader {
     @Path("/images/{imageId}")
     public byte[] getImageById(@PathParam("imageId") int imageId) {
         BufferedImage img;
-        File imageFromDb = imagesRepository.getImageWhereId(imageId);
+        File imageFromDb = imagesRepository.findOne(imageId).getImage();
         try {
             img = ImageIO.read(imageFromDb);
         } catch (IOException e) {
@@ -107,25 +76,21 @@ public class ImageUploader {
         return bao.toByteArray();
     }
 
-    @GET
-    @Produces("application/json; charset=utf-8")
-    @Path("/script")
-    public String getJS() {
-        StringBuilder result = new StringBuilder("");
-        ClassLoader classLoader = getClass().getClassLoader();
-
-        File file = new File(classLoader.getResource("script.js").getFile());
-
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                result.append(line).append("\n");
-            }
-            scanner.close();
+    @POST
+    @Path("/upload/image/{name}")
+    public void uploadImage(@FormDataParam("file") InputStream imageInputStream, @PathParam("name") String name) {
+        File file;
+        try {
+            file = new File(name);
+            OutputStream outputStream = new FileOutputStream(file);
+            IOUtils.copy(imageInputStream, outputStream);
+            outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
+            return;
         }
-        return result.toString();
+
+
     }
 
     @POST
@@ -143,11 +108,10 @@ public class ImageUploader {
             e.printStackTrace();
             return "redirect:/upload_fail";
         }
-        Integer highestValue = imagesRepository.getHighestIdValue();
-        int currentImageId = (highestValue == null ? 0 : highestValue) + 1;
+
+        int currentImageId = (new Long(imagesRepository.count())).intValue();
 
         imagesRepository.save(new Images(currentImageId, name, file));
-        System.out.println("CurrentImageID: " + currentImageId);
 
         StringTokenizer allTags = new StringTokenizer(tag);
         while (allTags.hasMoreTokens()) {
@@ -172,6 +136,5 @@ public class ImageUploader {
 
     private void addNewTagImageConnection(Integer imageId, Integer tagId) {
         tagImageConnectionRepository.save(new TagImageConnection(imageId, tagId));
-
     }
 }

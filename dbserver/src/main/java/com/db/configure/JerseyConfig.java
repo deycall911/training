@@ -1,4 +1,4 @@
-package com.image.galery;
+package com.db.configure;
 
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
@@ -10,7 +10,7 @@ import org.springframework.web.filter.RequestContextFilter;
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         register(RequestContextFilter.class);
-        packages("com.image.galery");
+        packages("com.db.requests");
         register(LoggingFilter.class);
         register(MultiPartFeature.class);
     }
