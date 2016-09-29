@@ -1,6 +1,0 @@
-*
-!\.*
-!*/
-dbserver/target
-dbserver/src/main/resources/bower_components
-

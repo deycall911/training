@@ -21,7 +21,7 @@ public class ResourcesLoad {
         StringBuilder result = new StringBuilder("");
         ClassLoader classLoader = getClass().getClassLoader();
 
-        File file = new File(classLoader.getResource("script.js").getFile());
+        File file = new File(classLoader.getResource("scripts/script.min.js").getFile());
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
@@ -37,13 +37,13 @@ public class ResourcesLoad {
 
     @GET
     @Produces("application/json; charset=utf-8")
-    @Path("/{bowerPath}/{scriptName}/{scriptFileName}")
-    public String getBowerJS(@PathParam("bowerPath") String bowerPath, @PathParam("scriptName") String scriptName, @PathParam("scriptFileName") String scriptFileName) {
+    @Path("/{scriptName}/{scriptFileName}")
+    public String getBowerJS(@PathParam("scriptName") String scriptName, @PathParam("scriptFileName") String scriptFileName) {
         StringBuilder result = new StringBuilder("");
         ClassLoader classLoader = getClass().getClassLoader();
 
 
-        File file = new File(classLoader.getResource(bowerPath + "/" + scriptName + "/" + scriptFileName).getFile());
+        File file = new File(classLoader.getResource("bower_components/" + scriptName + "/" + scriptFileName).getFile());
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {
