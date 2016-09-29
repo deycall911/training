@@ -7,17 +7,14 @@ import javax.persistence.Id;
 @Entity
 public class TagImageConnection {
 
-
     private Integer imageId;
     private Integer tagId;
-
 
     @Id
     @GeneratedValue
     private Integer id;
 
     public TagImageConnection() {
-
     }
 
     public TagImageConnection(Integer imageId, Integer tagId) {

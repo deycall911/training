@@ -8,7 +8,6 @@ import java.io.File;
 @Entity
 public class Images {
 
-
     @Id
     @GeneratedValue
     private Integer id;
@@ -16,7 +15,6 @@ public class Images {
     private File image;
 
     public Images() {
-
     }
 
     public Images(String name, File image) {

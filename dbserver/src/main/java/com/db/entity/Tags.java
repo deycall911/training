@@ -12,7 +12,6 @@ public class Tags {
     private String name;
 
     public Tags() {
-
     }
 
     public Tags(String name) {

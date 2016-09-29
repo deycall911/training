@@ -7,14 +7,13 @@ import com.db.repository.ImagesRepository;
 import com.db.repository.TagImageConnectionRepository;
 import com.db.repository.TagsRepository;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.h2.util.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -28,13 +27,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.StringTokenizer;
-
-import org.h2.util.IOUtils;
 
 /*
 GET /images/ (all image metedata)
@@ -61,13 +55,8 @@ public class RestRequests {
     @GET
     @Path("/images")
     @Produces(MediaType.APPLICATION_JSON)
-//    public Map<String,Iterable<Images>> returnSomething() {
     public Iterable<Images> returnSomething() {
-
-
         Iterable<Images> customImages = imagesRepository.findAll();
-//        HashMap<String,Iterable<Images>> result= new HashMap<String,Iterable<Images>> ();
-//        result.put("result", customImages);
         return customImages;
     }
 
@@ -117,7 +106,6 @@ public class RestRequests {
             e.printStackTrace();
             return null;
         }
-
 
 
         Images image = imagesRepository.save(new Images(name, file));
