@@ -35,25 +35,4 @@ public class WebPage {
 
         return Response.ok(result.toString()).build();
     }
-
-    @GET
-    @Produces("application/json; charset=utf-8")
-    @Path("/script")
-    public String getJS() {
-        StringBuilder result = new StringBuilder("");
-        ClassLoader classLoader = getClass().getClassLoader();
-
-        File file = new File(classLoader.getResource("script.js").getFile());
-
-        try (Scanner scanner = new Scanner(file)) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                result.append(line).append("\n");
-            }
-            scanner.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return result.toString();
-    }
 }
