@@ -17,7 +17,7 @@ app.directive('fileModel', ['$parse', function($parse) {
 }]);
 
 app.service('fileUpload', ['$http', function($http) {
-	this.uploadFileToUrl = function(file, name, tag, uploadUrl) {
+	this.uploadFileToUrl = function(file, name, tag, uploadUrl,callback) {
 		var fd = new FormData();
 		fd.append('file', file);
 		fd.append('name', name);
@@ -28,8 +28,9 @@ app.service('fileUpload', ['$http', function($http) {
 			headers: {
 				'Content-Type': undefined
 			}
-		}).success(function() {
-
+		}).success(function(response) {
+            console.log(response);
+            callback(response);
 		}).error(function(e) {
 			console.log(e);
 		});
@@ -42,7 +43,7 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 		return lowerStr.indexOf(expected.toLowerCase()) === 0;
 	}
 
-	$scope.getTagsForImageWithId = function() {
+	$scope.getTagsForInitImages = function() {
 		for (i = 0; i < $scope.images.length; i++) {
 			$scope.getTags(i);
 		}
@@ -56,10 +57,19 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 		});
 	}
 
+	$scope.getTagsForImageWithId = function(id,callback){
+	    $http.get('/tags/image/' + id)
+	        .success(function(data) {
+                callback(data);
+            }).error(function(e) {
+                console.log(e);
+            });
+	}
+
 	$scope.getAllImages = function() {
 		$http.get('/images/').success(function(data) {
 			$scope.images = data;
-			$scope.getTagsForImageWithId();
+			$scope.getTagsForInitImages();
 		});
 	}
 
@@ -70,7 +80,12 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 		var file = $scope.myFile;
 		console.log('file is ');
 		console.dir(file);
-		fileUpload.uploadFileToUrl(file, $scope.name, $scope.tag, uploadUrl);
+		fileUpload.uploadFileToUrl(file, $scope.name, $scope.tag, uploadUrl,function(response) {
+		    $scope.getTagsForImageWithId(response.id,function(tags) {
+		        response.tags = tags;
+		        $scope.images.push(response);
+		    });
+		});
 	};
 
 	$scope.showAdvanced = function(ev, id, name, tags) {

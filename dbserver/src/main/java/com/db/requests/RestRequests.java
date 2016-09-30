@@ -19,6 +19,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -94,7 +95,7 @@ public class RestRequests {
     @Path("/image")
     @Consumes({MediaType.MULTIPART_FORM_DATA, MediaType.APPLICATION_FORM_URLENCODED})
     @Produces(MediaType.APPLICATION_JSON)
-    public Images uploadImage(@FormDataParam("file") InputStream imageInputStream, @FormDataParam("name") String name, @FormDataParam("tag") String tag) {
+    public Response uploadImage(@FormDataParam("file") InputStream imageInputStream, @FormDataParam("name") String name, @FormDataParam("tag") String tag) {
 
         File file;
         try {
@@ -121,7 +122,7 @@ public class RestRequests {
 
             addNewTagImageConnection(currentImageId, currentTag.getId());
         }
-        return image;
+        return Response.ok(image).build();
     }
 
     @GET

@@ -13,7 +13,6 @@
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-ng-annotate": "^2.0.2",
-    "yo": "^1.8.5"
+    "grunt-ng-annotate": "^2.0.2"
   }
 }
