@@ -21,7 +21,7 @@ public class ResourcesLoad {
         StringBuilder result = new StringBuilder("");
         ClassLoader classLoader = getClass().getClassLoader();
 
-        File file = new File(classLoader.getResource("scripts/script.min.js").getFile());
+        File file = new File(classLoader.getResource("scripts/script.js").getFile());
 
         try (Scanner scanner = new Scanner(file)) {
             while (scanner.hasNextLine()) {

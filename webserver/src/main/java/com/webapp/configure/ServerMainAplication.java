@@ -1,4 +1,4 @@
-package com.db.configure;
+package com.webapp.configure;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,10 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EnableJpaRepositories("com.db.repository")
-@EntityScan("com.db.entity")
+
+@EntityScan("com.webapp.requests")
 @SpringBootApplication
 public class ServerMainAplication {
 

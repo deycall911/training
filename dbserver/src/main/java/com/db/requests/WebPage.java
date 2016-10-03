@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import java.io.File;
 import java.io.IOException;
@@ -29,9 +28,7 @@ public class WebPage {
             scanner.close();
         } catch (IOException e) {
             e.printStackTrace();
-            e.printStackTrace();
         }
-
 
         return Response.ok(result.toString()).build();
     }

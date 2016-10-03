@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class TagImageConnection {
+public class TagImageRelation {
 
     private Integer imageId;
     private Integer tagId;
@@ -14,10 +14,10 @@ public class TagImageConnection {
     @GeneratedValue
     private Integer id;
 
-    public TagImageConnection() {
+    public TagImageRelation() {
     }
 
-    public TagImageConnection(Integer imageId, Integer tagId) {
+    public TagImageRelation(Integer imageId, Integer tagId) {
         this.imageId = imageId;
         this.tagId = tagId;
     }
