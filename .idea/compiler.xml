@@ -30,7 +30,7 @@
       <module name="project" target="1.8" />
       <module name="server" target="1.8" />
       <module name="untitled" target="1.8" />
-      <module name="webserver" target="1.6" />
+      <module name="webserver" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package com.webapp.configure;
+package com.db.configure;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,24 +9,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
-@EntityScan("com.webapp.requests")
+@EnableJpaRepositories("com.db.repository")
+@EntityScan("com.db.entity")
 @SpringBootApplication
-public class ServerMainAplication {
+public class DataBaseServer {
 
-    private final static Logger LOG = LogManager.getLogger(ServerMainAplication.class);
+    private final static Logger LOG = LogManager.getLogger(DataBaseServer.class);
 
     public static void main(String[] args) {
         LOG.trace("Server start");
 
-        SpringApplication.run(ServerMainAplication.class, args);
+        SpringApplication.run(DataBaseServer.class, args);
     }
 
     @Bean
     public ServletRegistrationBean jerseyServlet() {
         ServletRegistrationBean registration = new ServletRegistrationBean(new ServletContainer(), "/configure/*");
-        registration.addInitParameter(ServletProperties.JAXRS_APPLICATION_CLASS, JerseyConfig.class.getName());
+        registration.addInitParameter(ServletProperties.JAXRS_APPLICATION_CLASS, DataBaseJerseyConfig.class.getName());
         return registration;
     }
 

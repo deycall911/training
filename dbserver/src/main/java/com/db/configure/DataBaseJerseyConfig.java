@@ -9,17 +9,17 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.filter.RequestContextFilter;
 
 
-
 @Configuration
-public class JerseyConfig extends ResourceConfig {
+public class DataBaseJerseyConfig extends ResourceConfig {
 
-    private final static Logger LOG = LogManager.getLogger(JerseyConfig.class);
+    private final static Logger LOG = LogManager.getLogger(DataBaseJerseyConfig.class);
 
-    public JerseyConfig() {
+    public DataBaseJerseyConfig() {
         LOG.trace("Jersey config");
         register(RequestContextFilter.class);
         packages("com.db.requests");
         register(LoggingFilter.class);
         register(MultiPartFeature.class);
+        register(new CORSFilter());
     }
 }

@@ -1,4 +1,4 @@
-package com.db.requests;
+package com.webapp.home;
 
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 @Component
 @Path("/")
-public class WebPage {
+public class HomePage {
 
     @GET
     @Path("/")
@@ -32,4 +32,5 @@ public class WebPage {
 
         return Response.ok(result.toString()).build();
     }
+
 }

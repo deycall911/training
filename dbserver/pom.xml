@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <name>dbserver</name>
-    <description>Demo project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -93,56 +92,17 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-
-                <executions>
-
-                    <execution>
-                        <id>exec-npm-install</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <executable>npm</executable>
-                            <arguments>
-                                <argument>install</argument>
-                            </arguments>
-                        </configuration>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-
-                    <execution>
-                        <id>exec-bower-install</id>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <executable>bower</executable>
-                            <arguments>
-                                <argument>install</argument>
-                            </arguments>
-                        </configuration>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-
-                    <execution>
-                        <id>exec-grunt</id>
-                        <phase>process-resources</phase>
-                        <configuration>
-                            <executable>grunt</executable>
-                        </configuration>
-                        <goals>
-                            <goal>exec</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>

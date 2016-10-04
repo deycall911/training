@@ -50,7 +50,7 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 	}
 
 	$scope.getTags = function(i) {
-		$http.get('/tags/image/' + $scope.images[i].id).success(function(data) {
+		$http.get('http://localhost:5000/tags/image/' + $scope.images[i].id).success(function(data) {
 			$scope.images[i].tags = data;
 		}).error(function(e) {
 			console.log(e);
@@ -58,7 +58,7 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 	}
 
 	$scope.getTagsForImageWithId = function(id,callback){
-	    $http.get('/tags/image/' + id)
+	    $http.get('http://localhost:5000/tags/image/' + id)
 	        .success(function(data) {
                 callback(data);
             }).error(function(e) {
@@ -67,14 +67,14 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 	}
 
 	$scope.getAllImages = function() {
-		$http.get('/images/').success(function(data) {
+		$http.get('http://localhost:5000/images/').success(function(data) {
 			$scope.images = data;
 			$scope.getTagsForInitImages();
 		});
 	}
 
 	$scope.uploadFile = function() {
-		var uploadUrl = "/image";
+		var uploadUrl = "http://localhost:5000/image";
 
 		console.log(uploadUrl);
 		var file = $scope.myFile;
@@ -89,7 +89,7 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 	};
 
 	$scope.deleteImage = function(id) {
-        $http.post('/delete/' + id).success(function() {
+        $http.post('http://localhost:5000/delete/' + id).success(function() {
             var imageToDeleteId = $scope.images.map(function(image) {
                 return image.id;
             }).indexOf(id);
@@ -102,7 +102,7 @@ app.controller('filterCtrl', ['$scope', 'fileUpload', '$mdDialog', '$http', func
 	$scope.showAdvanced = function(ev, id, name, tags) {
 		$mdDialog.show({
 				controller: DialogController,
-				template: '<img src="/image/' + id + '/png" ></img> <p style="margin:3px">Name: ' + name + '</p><p style="margin:5px">Tags: ' + tags.toString() + '</p>',
+				template: '<img src="http://localhost:5000/image/' + id + '/png" ></img> <p style="margin:3px">Name: ' + name + '</p><p style="margin:5px">Tags: ' + tags.toString() + '</p>',
 				parent: angular.element(document.body),
 				targetEvent: ev,
 				clickOutsideToClose: true,
