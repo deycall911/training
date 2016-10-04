@@ -30,3 +30,7 @@
 11:08:40.770 [localhost-startStop-1] TRACE com.db.configure.DataBaseJerseyConfig - Jersey config
 11:12:53.303 [main] TRACE com.db.configure.DataBaseServer - Server start
 11:12:57.857 [localhost-startStop-1] TRACE com.db.configure.DataBaseJerseyConfig - Jersey config
+11:59:21.771 [main] TRACE com.db.configure.DataBaseServer - Server start
+11:59:25.685 [localhost-startStop-1] TRACE com.db.configure.DataBaseJerseyConfig - Jersey config
+11:59:35.483 [main] TRACE com.webapp.configure.FrontEndServer - Server start
+11:59:38.480 [localhost-startStop-1] TRACE com.webapp.configure.FrontEndJerseyConfig - Jersey config

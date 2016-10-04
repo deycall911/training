@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/angular-material/angular-material.min.css">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="filterSpecial" ng-controller="filterCtrl">
+<div ng-init="getAllImages();"></div>
+
+<div style="background-color:#DDDDDD; padding: 10px; ">
+    <table>
+        <tr>
+            <td class="col-md-1 text-right">Name:</td>
+            <td class="col-md-5">
+                <input type="text" name="name" class="form-control" placeholder="Name" ng-model="name"/>
+            </td>
+
+            <td class="col-md-1 text-right">Tag:</td>
+            <td class="col-md-5">
+                <input type="text" name="tag" class="form-control" placeholder="Tags" ng-model="tag"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="col-md-1 text-right" style="padding:10px;">File to upload:</td>
+            <td class="col-md-5">
+                <label class="btn btn-primary"
+                       style="border-bottom-right-radius: 0px;border-top-right-radius: 0;width: 20%;">
+                    <input type="file" name="file" class="form-control" ng-model="file" file-model="myFile"
+                           style="display: none;"/> Browse...
+                </label>
+                <span class="form-control"
+                      style="border-bottom-left-radius: 0;border-top-left-radius: 0;width: 80%;float: right;">{{myFile.name}}</span>
+            </td>
+            <td class="col-md-1"/>
+            <td class="col-md-5">
+                <button class="col-md-12 btn btn-primary" ng-click="uploadFile()">Submit</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    <input type="text" ng-model="search" class="col-md-12 form-control" placeholder="Search name/tag">
+</div>
+
+
+<div class="form-group">
+
+    <div ng-repeat="image in images | filter:search:startsWith" style="display: inline-block; padding:7px;"
+         tag="{{image.tags}}">
+        <img src="http://localhost:5000/image/{{image.id}}/png" title="{{image.name}}" height="200px"
+             ng-click="showAdvanced($event,image.id,image.name,image.tags)">
+    </div>
+</div>
+<script src="/angular/angular.min.js"></script>
+<script src="/angular-animate/angular-animate.min.js"></script>
+<script src="/angular-route/angular-route.min.js"></script>
+<script src="/angular-aria/angular-aria.min.js"></script>
+<script src="/angular-messages/angular-messages.min.js"></script>
+<script src="/angular-material/angular-material.min.js"></script>
+
+<script src="/svg-assets-cache.js/svg-assets-cache.js"></script>
+
+<script src="/script/script.min.js"></script>
+</body>
+
+</html>

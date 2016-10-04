@@ -1,0 +1,3 @@
+com/webapp/home/HomePage.class
+com/webapp/configure/FrontEndServer.class
+com/webapp/configure/FrontEndJerseyConfig.class

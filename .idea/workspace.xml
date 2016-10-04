@@ -2,40 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dee8492-30bd-4bca-9a03-fa2de5a1a61d" name="Default" comment="random commit">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/excludeFromValidation.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbserver/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/CORSFilter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/output.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndJerseyConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/webserver/src/main/resources/log4j2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_mvc_2_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_mvc_jsp_2_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/.bowerrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/bower.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/ResourcesLoad.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/scripts/script.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/uploadForm.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/JerseyConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/webapp/WEB-INF/web.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_4_0_b06.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_4_0_b34.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/JerseyConfig.java" afterPath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseJerseyConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/ServerMainAplication.java" afterPath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseServer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequests.java" afterPath="$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/WebPage.java" afterPath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/home/HomePage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/ServerMainAplication.java" afterPath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndServer.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/webserver/src/main/resources/static/uploadForm.html" afterPath="$PROJECT_DIR$/webserver/src/main/resources/uploadForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/dbserver.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/CORSFilter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseJerseyConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseServer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/entity/Images.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/entity/TagImageRelation.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/entity/Tags.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/exception/RestRequestException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/repository/ImagesRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/repository/TagImageConnectionRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/repository/TagsRepository.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/log4j2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/.bowerrc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/Gruntfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/bower.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndJerseyConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndServer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/java/com/webapp/home/HomePage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/resources/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/resources/log4j2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/resources/script.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/src/main/resources/uploadForm.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/webserver/webserver.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbserver/pom.xml" afterPath="$PROJECT_DIR$/dbserver/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbserver/src/main/java/com/db/exception/RestRequestException.java" afterPath="$PROJECT_DIR$/dbserver/src/main/java/com/db/exception/RestRequestException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/dbserver/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dbserver/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/dbserver/src/main/resources/log4j2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webserver/pom.xml" afterPath="$PROJECT_DIR$/webserver/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webserver/src/main/resources/script.js" afterPath="$PROJECT_DIR$/webserver/src/main/resources/script.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webserver/webserver.iml" afterPath="$PROJECT_DIR$/webserver/webserver.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output.log" afterPath="$PROJECT_DIR$/output.log" />
     </list>
     <ignored path="project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -76,59 +75,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbserver/pom.xml">
+        <entry file="file://$PROJECT_DIR$/image-api/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="165">
+              <caret line="11" column="18" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="log4j2.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/log4j2.xml">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image-fe/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="120">
+              <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataBaseJerseyConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseJerseyConfig.java">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image-fe/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="uploadForm.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/uploadForm.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/script.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
+            <state relative-caret-position="165">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="FrontEndServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndServer.java">
+        <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/configure/FrontEndServer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
               <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
@@ -137,46 +114,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RestRequestsList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java">
+      <file leaf-file-name="FrontEndJerseyConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/configure/FrontEndJerseyConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="195">
+              <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CORSFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/CORSFilter.java">
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/home/HomePage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="output.log" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/output.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataBaseServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -236,7 +189,6 @@
         <option value="$PROJECT_DIR$/webserver/src/main/resources/static/uploadForm.html" />
         <option value="$PROJECT_DIR$/webserver/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/JerseyConfig.java" />
-        <option value="$PROJECT_DIR$/webserver/src/main/java/com/webapp/home/HomePage.java" />
         <option value="$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/ServerMainAplication.java" />
         <option value="$PROJECT_DIR$/dbserver/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/ServerMainAplication.java" />
@@ -253,6 +205,7 @@
         <option value="$PROJECT_DIR$/webserver/src/main/resources/script.js" />
         <option value="$PROJECT_DIR$/webserver/src/main/resources/uploadForm.html" />
         <option value="$PROJECT_DIR$/output.log" />
+        <option value="$PROJECT_DIR$/webserver/src/main/java/com/webapp/home/HomePage.java" />
       </list>
     </option>
   </component>
@@ -299,11 +252,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane">
-        <subPane />
-      </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -318,7 +268,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webserver" />
+              <option name="myItemId" value="image-fe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,7 +278,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webserver" />
+              <option name="myItemId" value="image-fe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -350,7 +300,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webserver" />
+              <option name="myItemId" value="image-fe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -361,6 +311,18 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -368,11 +330,44 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dbserver" />
+              <option name="myItemId" value="image-fe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="configure" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="training" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image-api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane />
       </pane>
     </panes>
   </component>
@@ -730,18 +725,16 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4841998" sideWeight="0.5018747" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4841998" sideWeight="0.49812534" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4841998" sideWeight="0.49812534" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2501339" sideWeight="0.48043817" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30682978" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -751,8 +744,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925585" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299411" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30682978" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -770,13 +765,13 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java</url>
+          <url>file://$PROJECT_DIR$/image-api/src/main/java/com/db/requests/RestRequestsList.java</url>
           <line>58</line>
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java</url>
+          <url>file://$PROJECT_DIR$/image-api/src/main/java/com/db/requests/RestRequestsList.java</url>
           <line>59</line>
           <properties />
           <option name="timeStamp" value="68" />
@@ -795,13 +790,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Throwable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1335">
@@ -834,44 +822,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webserver/src/main/webapp/resources/uploadForm.jsp" />
     <entry file="file://$PROJECT_DIR$/webserver/src/main/webapp/WEB-INF/web.xml" />
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="25" selection-start-line="0" selection-start-column="25" selection-end-line="0" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webserver/src/main/java/com/webapp/webpages/StartPage.java" />
-    <entry file="file://$PROJECT_DIR$/webserver/Gruntfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dbserver/Gruntfile.js" />
     <entry file="file://$PROJECT_DIR$/dbserver/.bowerrc" />
-    <entry file="file://$PROJECT_DIR$/webserver/bower.json">
+    <entry file="file://$PROJECT_DIR$/image-fe/bower.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="41" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/.bowerrc">
+    <entry file="file://$PROJECT_DIR$/image-fe/.bowerrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,77 +855,65 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbserver/bower.json" />
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/resources/log4j2.xml">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/resources/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/WebPage.java" />
     <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/ResourcesLoad.java" />
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/exception/RestRequestException.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/exception/RestRequestException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="67" selection-start-line="5" selection-start-column="67" selection-end-line="5" selection-end-column="67" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/dbserver.iml">
+    <entry file="file://$PROJECT_DIR$/image-api/image-api.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/entity/Images.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/entity/Images.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/entity/TagImageRelation.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/entity/TagImageRelation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/repository/ImagesRepository.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/repository/ImagesRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/repository/TagsRepository.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/repository/TagsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/pom.xml">
+    <entry file="file://$PROJECT_DIR$/image-fe/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
@@ -962,41 +921,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/java/com/webapp/home/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndJerseyConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/java/com/webapp/configure/FrontEndServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseServer.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/configure/DataBaseServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/requests/RestRequestsList.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/requests/RestRequestsList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
@@ -1004,47 +936,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/static/script/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/static/script/script.min.js">
+    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/static/script/script.js" />
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/resources/static/script/script.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1804" selection-start-line="0" selection-start-column="1804" selection-end-line="0" selection-end-column="1804" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/script.js">
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/resources/script.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="95" column="29" selection-start-line="95" selection-start-column="29" selection-end-line="95" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/uploadForm.html">
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/resources/uploadForm.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webserver/src/main/resources/log4j2.xml">
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/resources/log4j2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
@@ -1052,30 +966,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/DataBaseJerseyConfig.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/configure/DataBaseJerseyConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dbserver/src/main/java/com/db/configure/CORSFilter.java">
+    <entry file="file://$PROJECT_DIR$/image-api/src/main/java/com/db/configure/CORSFilter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/output.log">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="96" selection-start-line="5" selection-start-column="96" selection-end-line="5" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar!/javax/ws/rs/core/Response.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="178" column="43" selection-start-line="178" selection-start-column="43" selection-end-line="178" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-fe/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="91" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-fe/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/home/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/configure/FrontEndServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/image-fe/src/main/java/com/webapp/configure/FrontEndJerseyConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="64" selection-start-line="18" selection-start-column="64" selection-end-line="18" selection-end-column="64" />
           <folding />
         </state>
       </provider>
